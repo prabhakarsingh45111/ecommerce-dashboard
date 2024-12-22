@@ -67,7 +67,7 @@ Here's a breakdown of the key metrics and visualizations in the dashboard:
 
 *   **Sum of Amount by State:** Shows sales distribution across different states. Maharashtra, Madhya Pradesh, Uttar Pradesh, and Delhi are shown.
 
-    ![Sales by State](images/sales_by_state.png)
+    ![Sales by State](https://github.com/user-attachments/assets/9a6af35e-4c75-4e0f-b071-aec7a764c3b4)
 
 *   **% Of Quantity by Category:** Displays the proportion of items sold in each product category (Clothing, Electronics, Furniture). Clothing dominates at 62.62%.
 
