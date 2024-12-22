@@ -102,7 +102,7 @@ Based on the dashboard:
 ## Tools Used
 
 *   **Data Visualization:** Power BI
-*   (Add other tools used for data extraction, cleaning, etc.)
+
 
 ## Future Enhancements
 
@@ -112,10 +112,6 @@ Based on the dashboard:
 *   **Mobile Optimization:** Creating a mobile-friendly version of the dashboard.
 *   **Drill-down Functionality:** Adding more drill-down capabilities to explore data at more granular levels.
 
-**Important:** To make this README truly useful, you need to:
+## Snapshot Of Power BI Dashboard 
+![Screenshot 2024-12-06 232729](https://github.com/user-attachments/assets/eeb6b4f1-7527-4c4e-9100-960d8caa19aa)
 
-1.  **Replace placeholder information:** Fill in the missing details about data sources, cleaning steps, and specific tools used.
-2.  **Add actual images:** Replace the placeholder image references (`images/kpis.png`, etc.) with actual screenshots of the dashboard cards. Create an `images` folder in your repository and put the image files there.
-3.  **Provide more specific insights:** Analyze the data in more detail and provide more concrete and actionable insights.
-
-By completing these steps, you'll create a much more informative and valuable README file.
