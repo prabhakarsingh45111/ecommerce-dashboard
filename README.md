@@ -55,7 +55,6 @@ Here's a breakdown of the key metrics and visualizations in the dashboard:
     *   **Sum of Quantity:** 5615 (Total number of items sold)
     *   **Sum of AOV (Average Order Value):** 121K (Average value of each order)
 
-    ![KPIs](images/kpis.png)
 
 *   **Sum of Amount by State:** Shows sales distribution across different states. Maharashtra, Madhya Pradesh, Uttar Pradesh, and Delhi are shown.
 
