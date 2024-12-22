@@ -1,10 +1,10 @@
-# Airlines-Dashboard
+# Madhav E-commerce Sales Dashboard
 
 ### Dashboard Link : 
 
 
 https://app.powerbi.com/groups/me/reports/a7c4a771-4b3b-4786-84ae-edf4d393eeb1?ctid=6082211e-6f08-438a-a87a-74cb477d9431&pbi_source=linkShare
-# Madhav E-commerce Sales Dashboard
+
 
 This README documents the Madhav E-commerce Sales Dashboard, providing insights into sales performance, identifying key trends, and outlining the development process.
 
@@ -34,12 +34,10 @@ This dashboard aims to address these challenges by providing an interactive and 
 
 (This section requires information about the actual data sources used. Assuming a common scenario:)
 
-*   **Sales Database:** Likely a relational database (e.g., MySQL, PostgreSQL) containing transactional data (orders, products, customers, etc.).
+*   **Sales Database:** Likely a relational database (e.g., MySQL) containing transactional data (orders, products, customers, etc.).
 *   **Customer Relationship Management (CRM) System:** Potentially containing additional customer data.
 
 ## Data Cleaning and Preprocessing
-
-(This section needs details on the specific cleaning steps. General examples:)
 
 *   **Handling Missing Values:** Addressing missing data in fields like customer addresses or product descriptions.
 *   **Data Type Conversion:** Ensuring correct data types for calculations and visualizations (e.g., converting date strings to date objects).
@@ -47,7 +45,7 @@ This dashboard aims to address these challenges by providing an interactive and 
 
 ## Dashboard Development
 
-The dashboard was developed using Power BI (based on the provided image). The development process involved:
+The dashboard was developed using Power BI. The development process involved:
 
 1.  **Data Connection:** Connecting Power BI to the data source(s).
 2.  **Data Modeling:** Creating relationships between tables to enable data analysis across different dimensions.
