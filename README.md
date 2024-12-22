@@ -1,4 +1,4 @@
-# Madhav E-commerce Sales Dashboard
+# E-commerce Sales Dashboard
 
 ### Dashboard Link : 
 
