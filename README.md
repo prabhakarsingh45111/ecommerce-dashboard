@@ -4,217 +4,120 @@
 
 
 https://app.powerbi.com/groups/me/reports/a7c4a771-4b3b-4786-84ae-edf4d393eeb1?ctid=6082211e-6f08-438a-a87a-74cb477d9431&pbi_source=linkShare
+# Madhav E-commerce Sales Dashboard
+
+This README documents the Madhav E-commerce Sales Dashboard, providing insights into sales performance, identifying key trends, and outlining the development process.
+
+## Table of Contents
+
+*   [Problem Statement](#problem-statement)
+*   [Data Sources](#data-sources)
+*   [Data Cleaning and Preprocessing](#data-cleaning-and-preprocessing)
+*   [Dashboard Development](#dashboard-development)
+*   [Key Metrics and Visualizations](#key-metrics-and-visualizations)
+*   [Insights and Findings](#insights-and-findings)
+*   [Tools Used](#tools-used)
+*   [Future Enhancements](#future-enhancements)
 
 ## Problem Statement
 
-This dashboard helps the airlines understand their customers better. It helps the airlines know if their customers are satisfied with their services. Through different ratings, they get to know their improvement area, & thus they can improve their services by identifying these area. It also lets them know the average delay & departure time, thus since by using this dashboard they have identified this problem, they can further work on factors responsible for these unwanted delays.
+Madhav E-commerce generates a significant amount of sales data. Without an effective way to visualize and analyze this data, it's difficult to:
 
-Since, number of neutral/dissatisfied customers (almost 57 %) are more than satisfied customers (around 43 %), thus in all they must work on improving their services. 
+*   Gain a holistic view of sales performance across different dimensions (e.g., region, product category, customer).
+*   Identify trends, patterns, and anomalies in sales data.
+*   Make data-driven decisions to optimize sales strategies and improve business outcomes.
+*   Quickly identify top-performing and underperforming areas of the business.
 
-Also since average delay in arrival & departure both is 15 minutes, thus they must try to reduce it.
+This dashboard aims to address these challenges by providing an interactive and insightful overview of Madhav E-commerce's sales data.
 
+## Data Sources
 
-### Steps followed 
+(This section requires information about the actual data sources used. Assuming a common scenario:)
 
-- Step 1 : Load data into Power BI Desktop, dataset is a csv file.
-- Step 2 : Open power query editor & in view tab under Data preview section, check "column distribution", "column quality" & "column profile" options.
-- Step 3 : Also since by default, profile will be opened only for 1000 rows so you need to select "column profiling based on entire dataset".
-- Step 4 : It was observed that in none of the columns errors & empty values were present except column named "Arrival Delay".
-- Step 5 : For calculating average delay time, null values were not taken into account as only less than 1% values are null in this column(i.e column named "Arrival Delay") 
-- Step 6 : In the report view, under the view tab, theme was selected.
-- Step 7 : Since the data contains various ratings, thus in order to represent ratings, a new visual was added using the three ellipses in the visualizations pane in report view. 
-- Step 8 : Visual filters (Slicers) were added for four fields named "Class", "Customer Type", "Gate Location" & "Type of travel".
-- Step 9 : Two card visuals were added to the canvas, one representing average departure delay in minutes & other representing average arrival delay in minutes.
-           Using visual level filter from the filters pane, basic filtering was used & null values were unselected for consideration into average calculation.
-           
-           Although, by default, while calculating average, blank values are ignored.
-- Step 10 : A bar chart was also added to the report design area representing the number of satisfied & neutral/unsatisfied customers. While creating this visual, field named "Gender" was also added to the Legends bucket, thus number of customers are also seggregated according the gender. 
-- Step 11 : Ratings Visual was used to represent different ratings mentioned below,
+*   **Sales Database:** Likely a relational database (e.g., MySQL, PostgreSQL) containing transactional data (orders, products, customers, etc.).
+*   **Customer Relationship Management (CRM) System:** Potentially containing additional customer data.
 
-  (a) Baggage Handling
+## Data Cleaning and Preprocessing
 
-  (b) Check-in Services
-  
-  (c) Cleanliness
-  
-  (d) Ease of online booking
-  
-  (e) Food & Drink
-  
-  (f) In-flight Entertainment
+(This section needs details on the specific cleaning steps. General examples:)
 
-  (g) In-flight Service
-  
-  (h) In-flight wifi service
-  
-  (i) Leg Room service
-  
-  (j) On-board service
-  
-  (k) Online boarding
-  
-  (l) Seat comfort
-  
-  (m) Departure & arrival time convenience
-  
-In our dataset, Some parameters were assigned value 0, representing those parameters are not applicable for some customers.
+*   **Handling Missing Values:** Addressing missing data in fields like customer addresses or product descriptions.
+*   **Data Type Conversion:** Ensuring correct data types for calculations and visualizations (e.g., converting date strings to date objects).
+*   **Data Transformation:** Calculating new metrics like Average Order Value (AOV) or profit margins.
 
-All these values have been ignored while calculating average rating for each of the parameters mentioned above.
+## Dashboard Development
 
-- Step 12 : In the report view, under the insert tab, two text boxes were added to the canvas, in one of them name of the airlines was mentioned & in the other one company's tagline was written.
-- Step 13 : In the report view, under the insert tab, using shapes option from elements group a rectangle was inserted & similarly using image option company's logo was added to the report design area. 
-- Step 14 : Calculated column was created in which, customers were grouped into various age groups.
+The dashboard was developed using Power BI (based on the provided image). The development process involved:
 
-for creating new column following DAX expression was written;
-       
-        Age Group = 
-        
-        if(airline_passenger_satisfaction[Age]<=25, "0-25 (25 included)",
-        
-        if(airline_passenger_satisfaction[Age]<=50, "25-50 (50 included)",
-        
-        if(airline_passenger_satisfaction[Age]<=75, "50-75 (75 included)",
-        
-        "75-100 (100 included)")))
-        
-Snap of new calculated column ,
+1.  **Data Connection:** Connecting Power BI to the data source(s).
+2.  **Data Modeling:** Creating relationships between tables to enable data analysis across different dimensions.
+3.  **Visualization Creation:** Designing charts, graphs, and other visual elements to represent the data effectively.
+4.  **Interactive Elements:** Implementing filters, slicers, and drill-down capabilities for user interaction.
 
-![Snap_1](https://user-images.githubusercontent.com/102996550/174089602-ab834a6b-62ce-4b62-8922-a1d241ec240e.jpg)
+## Key Metrics and Visualizations
 
-        
-- Step 15 : New measure was created to find total count of customers.
+Here's a breakdown of the key metrics and visualizations in the dashboard:
 
-Following DAX expression was written for the same,
-        
-        Count of Customers = COUNT(airline_passenger_satisfaction[ID])
-        
-A card visual was used to represent count of customers.
+*   **Key Performance Indicators (KPIs):**
 
-![Snap_Count](https://user-images.githubusercontent.com/102996550/174090154-424dc1a4-3ff7-41f8-9617-17a2fb205825.jpg)
+    *   **Sum of Amount (Total Sales):** 438K (Overall sales revenue)
+    *   **Sum of Profit:** 37K (Total profit generated)
+    *   **Sum of Quantity:** 5615 (Total number of items sold)
+    *   **Sum of AOV (Average Order Value):** 121K (Average value of each order)
 
-        
- - Step 16 : New measure was created to find  % of customers,
- 
- Following DAX expression was written to find % of customers,
- 
-         % Customers = (DIVIDE(airline_passenger_satisfaction[Count of Customers], 129880)*100)
- 
- A card visual was used to represent this perecntage.
- 
- Snap of % of customers who preferred business class
- 
- ![Snap_Percentage](https://user-images.githubusercontent.com/102996550/174090653-da02feb4-4775-4a95-affb-a211ca985d07.jpg)
+    ![KPIs](images/kpis.png)
 
- 
- - Step 17 : New measure was created to calculate total distance travelled by flights & a card visual was used to represent total distance.
- 
- Following DAX expression was written to find total distance,
- 
-         Total Distance Travelled = SUM(airline_passenger_satisfaction[Flight Distance])
-    
- A card visual was used to represent this total distance.
- 
- 
- ![Snap_3](https://user-images.githubusercontent.com/102996550/174091618-bf770d6c-34c6-44d4-9f5e-49583a6d5f68.jpg)
- 
- - Step 18 : The report was then published to Power BI Service.
- 
- 
-![Publish_Message](https://user-images.githubusercontent.com/102996550/174094520-3a845196-97e6-4d44-8760-34a64abc3e77.jpg)
+*   **Sum of Amount by State:** Shows sales distribution across different states. Maharashtra, Madhya Pradesh, Uttar Pradesh, and Delhi are shown.
 
-# Snapshot of Dashboard (Power BI Service)
+    ![Sales by State](images/sales_by_state.png)
 
-![dashboard_snapo](https://user-images.githubusercontent.com/102996550/174096257-11f1aae5-203d-44fc-bfca-25d37faf3237.jpg)
+*   **% Of Quantity by Category:** Displays the proportion of items sold in each product category (Clothing, Electronics, Furniture). Clothing dominates at 62.62%.
 
- 
- # Report Snapshot (Power BI DESKTOP)
+    ![Quantity by Category](images/quantity_by_category.png)
 
- 
-![Dashboard_upload](https://user-images.githubusercontent.com/102996550/174074051-4f08287a-0568-4fdf-8ac9-6762e0d8fa94.jpg)
+*   **Sum of Profit by Month:** Tracks profit trends over time, showing profitability for each month. There appears to be a loss in June.
 
-# Insights
+    ![Profit by Month](images/profit_by_month.png)
 
-A single page report was created on Power BI Desktop & it was then published to Power BI Service.
+*   **Sum of Amount by CustomerName:** Shows sales generated by top customers (Harivansh, Madhav, Madan Mohan, Shiva).
 
-Following inferences can be drawn from the dashboard;
+    ![Sales by Customer](images/sales_by_customer.png)
 
-### [1] Total Number of Customers = 129880
+*   **% Of Quantity by Category (Detailed):** A more detailed breakdown of quantity by category and sub-category, along with payment mode information.
 
-   Number of satisfied Customers (Male) = 28159 (21.68 %)
+    ![Detailed Quantity by Category](images/detailed_quantity_by_category.png)
 
-   Number of satisfied Customers (Female) = 28269 (21.76 %)
+*   **Sum of Profit by Sub-Category:** Shows profit generated by different sub-categories. Tables appear to be the most profitable.
 
-   Number of neutral/unsatisfied customers (Male) = 35822 (27.58 %)
+    ![Profit by Sub-Category](images/profit_by_subcategory.png)
 
-   Number of neutral/unsatisfied customers (Female) = 37630 (28.97 %)
+## Insights and Findings
 
+Based on the dashboard:
 
-           thus, higher number of customers are neutral/unsatisfied.
-           
-### [2] Average Ratings
+*   **Clothing is the top-selling category**, contributing significantly to overall sales.
+*   **Tables are the most profitable sub-category.**
+*   **June was a loss-making month**, requiring further investigation.
+*   **Maharashtra appears to be a key market** in terms of sales amount.
+*   **A few key customers (Harivansh, Madhav)** contribute a large portion of sales.
 
-    a) Baggage Handling - 3.63/5
-    b) Check-in Service - 3.31/5
-    c) Cleanliness - 3.29/5
-    d) Ease of online booking - 2.88/5
-    e) Food & Drink - 3.21/5
-    f) In-flight Entertainment - 3.36/5
-    g) In-flight service - 3.64/5
-    h) In-flight Wifi service - 2.81/5
-    i) Leg room service - 3.37/5
-    j) On-board service - 3.38/5
-    k) Online boarding - 3.33/5
-    l) Seat comfort - 3.44/5
-    m) Departure & arrival convenience - 3.22/5
-  
-  while calculating average rating, null values have been ignored as they were not relevant for some customers. 
-  
-  These ratings will change if different visual filters will be applied.  
-  
-  ### [3] Average Delay 
-  
-      a) Average delay in arrival(minutes) - 15.09
-      b) Average delay in departure(minutes) - 14.71
-Average delay will change if different visual filters will be applied.
+## Tools Used
 
- ### [4] Some other insights
- 
- ### Class
- 
- 1.1) 47.87 % customers travelled by Business class.
- 
- 1.2) 44.89 % customers travelled by Economy class.
- 
- 1.3) 7.25 % customers travelled by Economy plus class.
- 
-         thus, maximum customers travelled by Business class.
- 
- ### Age Group
- 
- 2.1)  21.69 % customers belong to '0-25' age group.
- 
- 2.2)  52.44 % customers belong to '25-50' age group.
- 
- 2.3)  25.57 % customers belong to '50-75' age group.
- 
- 2.4)  0.31 % customers belong to '75-100' age group.
- 
-         thus, maximum customers belong to '25-50' age group.
-         
-### Customer Type
+*   **Data Visualization:** Power BI
+*   (Add other tools used for data extraction, cleaning, etc.)
 
-3.1) 18.31 % customers have customer type 'First time'.
+## Future Enhancements
 
-3.2) 81.69 % customers have customer type 'returning'.
-       
-       thus, more customers have customer type 'returning'.
+*   **More Granular Data:** Adding more detailed data (e.g., product-level sales, customer demographics) for deeper analysis.
+*   **Predictive Analytics:** Incorporating forecasting models to predict future sales trends.
+*   **Real-time Data Updates:** Connecting to live data sources for up-to-the-minute insights.
+*   **Mobile Optimization:** Creating a mobile-friendly version of the dashboard.
+*   **Drill-down Functionality:** Adding more drill-down capabilities to explore data at more granular levels.
 
-### Type of travel
+**Important:** To make this README truly useful, you need to:
 
-4.1) 69.06 % customers have travel type 'Business'.
+1.  **Replace placeholder information:** Fill in the missing details about data sources, cleaning steps, and specific tools used.
+2.  **Add actual images:** Replace the placeholder image references (`images/kpis.png`, etc.) with actual screenshots of the dashboard cards. Create an `images` folder in your repository and put the image files there.
+3.  **Provide more specific insights:** Analyze the data in more detail and provide more concrete and actionable insights.
 
-4.2) 30.94 % customers have travel type 'Personal'.
-
-        thus, more customers have travel type 'Business'.
-# Airlines-Dashboard.md.txt
-Displaying # Airlines-Dashboard.md.txt.
+By completing these steps, you'll create a much more informative and valuable README file.
