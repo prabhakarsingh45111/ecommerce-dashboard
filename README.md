@@ -3,7 +3,7 @@
 ### Dashboard Link : 
 
 
-https://app.powerbi.com/groups/me/reports/a7c4a771-4b3b-4786-84ae-edf4d393eeb1?ctid=6082211e-6f08-438a-a87a-74cb477d9431&pbi_source=linkShare
+[Live Dashboard Link](https://app.powerbi.com/view?r=eyJrIjoiZWNjNTExY2UtNmQ1NS00MzQxLTllNjMtNWIwNGRhOTlmOTE1IiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9)
 
 
 This README documents the E-commerce Sales Dashboard, providing insights into sales performance, identifying key trends, and outlining the development process.
